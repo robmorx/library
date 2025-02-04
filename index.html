@@ -7,16 +7,32 @@
     <title>Document</title>
 </head>
     <body>
-        <label for="name">Name:</label>
-        <input id="name" placeholder="Input the name">
+        <dialog id="libraryDialog">
+            <form>
+              <p>
+                <label>
+                    <label for="name">Name:</label>
+                    <input id="name" placeholder="Input the name">
 
-        <label for="Author">Author:</label>
-        <input id="author" placeholder="Input the author">
+                    <label for="Author">Author:</label>
+                    <input id="author" placeholder="Input the author">
 
-        <label for="numPages">Edad:</label>
-        <input id="numPages" placeholder="Number of pages">
+                    <label for="numPages">Number of pages:</label>
+                    <input id="numPages" placeholder="Number of pages">
+                </label>
+              </p>
+              <div>
+                <button value="cancel" formmethod="dialog">Cancel</button>
+                <button id="confirmBtn" value="default">Confirm</button>
+                <button id="submit">Send to library</button>
+              </div>
+            </form>
+          </dialog>
+          <p>
+            <button id="showDialog">Show the dialog to enter a book</button>
+          </p>
+          <output></output>
         
-        <button id="submit">Send to library</button>
 
         <table border id="objeto">
             <tr>
