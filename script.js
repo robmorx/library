@@ -3,6 +3,7 @@
     $("#submit").on("click", (e)=>{
       e.preventDefault();
       getInfo();
+      showlibrary();
     });
     $("#showDialog").on("click", () => {
       const dialog = document.querySelector("#libraryDialog");
@@ -12,7 +13,7 @@
 
     function getInfo(){    
       let newbook= new Book($("#name").val(), $("#author").val(), $("#numPages").val());
-      
+      addBookToLibrary(newbook);
       $("#libraryDialog").hide();
     }
 
@@ -25,22 +26,24 @@
       
     function addBookToLibrary(book) {
           myLibrary.splice(-1,0,book);
-          showlibrary(); 
+          console.log(myLibrary);
+           
       }
     
     function showlibrary(){
       libraryTable = document.querySelector("#library");
-      
-      for (let book in myLibrary){
+      console.log(myLibrary);
+      myLibrary.forEach((book) =>{
         tr = document.createElement("tr");
-        const keys = Object.keys[book];
+        const keys = Object.keys(book);
         for(let key in keys){
           td = document.createElement("td");
-          td.innetText = book.key;
+          console.log(book[keys[key]]);
+          td.innerText = book[keys[key]];
           tr.appendChild(td);
         }
         libraryTable.appendChild(tr);
-      }
+      });
 
     }
 
